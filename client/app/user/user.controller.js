@@ -12,7 +12,6 @@ angular.module('yokelApp')
       })
   })
 
-
   //Sends of userId to server to return specific user
   .factory('UserPages', function($http){
     var getUserPage = function(userId){
@@ -25,7 +24,7 @@ angular.module('yokelApp')
       })
       return {
         getUserPage: getUserPage
-      }      
+      }
     }
   });
 

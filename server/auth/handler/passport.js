@@ -10,7 +10,7 @@ var configAuth = require('../../config/auth');
 
 module.exports = function(passport) {
 
-	// used to serialize the user for the session
+  // used to serialize the user for the session
   passport.serializeUser(function(user, done) {
       done(null, user.facebookID);
   });
@@ -25,16 +25,16 @@ module.exports = function(passport) {
         done(err)
       });
   });
-    
-	// code for login (use('local-login', new LocalStategy))
-	// code for signup (use('local-signup', new LocalStategy))
 
-	// =========================================================================
+  // code for login (use('local-login', new LocalStategy))
+  // code for signup (use('local-signup', new LocalStategy))
+
+    // =========================================================================
     // FACEBOOK ================================================================
     // =========================================================================
     passport.use(new FacebookStrategy({
 
-		// pull in our app id and secret from our auth.js file
+    // pull in our app id and secret from our auth.js file
         clientID        : configAuth.facebookAuth.clientID,
         clientSecret    : configAuth.facebookAuth.clientSecret,
         callbackURL     : configAuth.facebookAuth.callbackURL
@@ -46,10 +46,10 @@ module.exports = function(passport) {
 
         // asynchronous
         process.nextTick(function() {
-    
+
                 profile = profile._json;
-              User.createUniqueUser({facebookID:profile.id, 
-                           facebookToken:token, 
+              User.createUniqueUser({facebookID:profile.id,
+                           facebookToken:token,
                            name: profile.name,
                            email:profile.email})
               .then(function(data){

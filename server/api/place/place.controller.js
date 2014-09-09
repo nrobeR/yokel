@@ -5,7 +5,7 @@ var config = require('../../config/environment/production');
 var Promise = require('bluebird');
 var request = require('request');
 
-//fetch business data 
+//fetch business data
 
 //fetch detailed place info from google
 
@@ -20,7 +20,7 @@ var addDatabase = function(place){
 //google places api call here!!
 var apiRequest = function(req, res){
   request('https://maps.googleapis.com/maps/api/place/details/json?placeid=' + req.param("businessId") + '&key='+ config.googleAPIKey, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       var place = JSON.parse(body).result;
       addDatabase(place)
       .then(function(placeInfo){

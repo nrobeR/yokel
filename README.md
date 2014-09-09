@@ -24,25 +24,25 @@
 2. create an azure ubuntu 14.14 server
 2. login via ssh using the username and password you provided
 2. Update the headers with: sudo apt-get update
-2. Install the latest version of open java 7 with: 
+2. Install the latest version of open java 7 with:
 sudo apt-get install openjdk-7-jdk
-2. Download neo4j with: 
+2. Download neo4j with:
 wget http://dist.neo4j.org/neo4j-community-2.1.3-unix.tar.gz
-2. Extract the tar ball with: tar -zxvf neo4j-community-2.1.3-unix.tar.gz 
+2. Extract the tar ball with: tar -zxvf neo4j-community-2.1.3-unix.tar.gz
 2. Change into the neo4j directory with: cd neo4j-community-2.1.3/
 2. Install neo4j as a service using: sudo ./bin/neo4j-installer install
-2. Allow the service to create a new user for you 
-2. Edit conf/neo4j-server.properties with: 
+2. Allow the service to create a new user for you
+2. Edit conf/neo4j-server.properties with:
 sudo nano conf/neo4j-server.properties
 Change this line:
 * **\#org.neo4j.server.web server.address=0.0.0.0**
-to this: 
+to this:
 * **org.neo4j.server.web server.address=0.0.0.0**
 and close the editor
-	Hot tip: you can save and exit nano with ctrl+x then hit y and enter
-2. Check to see if the service is running with: 
-sudo service neo4j-service status 
-If the service is not running start it with: 
+  Hot tip: you can save and exit nano with ctrl+x then hit y and enter
+2. Check to see if the service is running with:
+sudo service neo4j-service status
+If the service is not running start it with:
 sudo service neo4j-service start
 If the service is running restart it with:
 sudo service neo4j-service restart
@@ -52,13 +52,13 @@ name: HTTP
 protocol: TCP
 Public Port: 80
 Private Port: 7474
-2. Allow the changes to be applied 
+2. Allow the changes to be applied
 2. Navigate to your webserver it will be somthing like websiteName.cloudapp.net
 2.You are all set!
 
 ###Google API Key
 3. Go to [https://console.developers.google.com](https://console.developers.google.com)
-3. Login or create an account 
+3. Login or create an account
 3. Create a new project
 3. Click enable API
 3. Find Places API and turn it on
@@ -80,9 +80,9 @@ You can do this with:
 4. you should save these keys just like the google api key
    * **export FACEBOOK_CLIENT_ID=facebookAppId**
    * **export FACEBOOK_CLIENT_SECRET=facebookAppSecret**
-4. Now we need to set the callback urls that your app will accept 
+4. Now we need to set the callback urls that your app will accept
 4. Click settings on the right hand side of the screen
-4. Then click Advanced 
+4. Then click Advanced
 4. Under security there is a field called Valid OAuth redirect URIs in here you want to add your callback url
   * During development on a local computer set the field to: http://localhost:9000/auth/facebook/callback
   * During production add your website url like this: http://MYWEBSITEHERE/auth/facebook/callback
@@ -94,8 +94,6 @@ You can do this with:
 4. Congratulations you now have a Facebook app that you can authenticate with!
 
 ## Requirements
-
-
 
 - Node 0.10.x
 - Angular
@@ -118,10 +116,6 @@ bower install
 
 View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
 
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
-
-
-

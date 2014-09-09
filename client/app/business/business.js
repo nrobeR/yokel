@@ -6,6 +6,16 @@ angular.module('yokelApp')
       .state('business', {
         url: '/business/:place_id',
         templateUrl: 'app/business/business.html',
-        controller: 'BusinessController'
+        controller: 'BusinessController',
+        resolve: { resolveData: resolveData }
       });
+      function resolveData($http, $stateParams){
+        var businessId = $stateParams.place_id;
+        return $http({
+          method: 'GET',
+          url: 'api/businesses/'+businessId,
+        }).success(function(business){
+          return business;
+        });
+      }
   });

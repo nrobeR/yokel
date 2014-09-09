@@ -19,8 +19,8 @@ var Place = require('../place/placeModel.js');
 var Promise = require('bluebird');
 
 // Get list of locations that are top ranked in the radius
-//there will be a google api call here to get all of the restraunts in the 
-//given area. 
+//there will be a google api call here to get all of the restraunts in the
+//given area.
 
 //api call gets a list of places : currently faked
 //these will come in without scores
@@ -55,7 +55,7 @@ var findBest = function(placesWithScores){
 }
 var apiRequest = function(req, res){
   request('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+ req.param("lat") + ',' + req.param("lon") +'&radius=3200&types=food&key=' + config.googleAPIKey , function (error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       var places = JSON.parse(body).results
       addScores(places)
        .then(function(data){
