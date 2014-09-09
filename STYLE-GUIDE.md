@@ -194,7 +194,7 @@ When writing any block of code that is logically subordinate to the line immedia
 * Otherwise no padding in parameters
 ```javascript
 //Good  
-	function( bar, foo() );
+function( bar, foo() );
 function(foo, bar);
 
 //Bad
