@@ -185,10 +185,10 @@ When writing any block of code that is logically subordinate to the line immedia
 * Comment on what code is attempting to do, not how it will achieve it.
 
 ### Padding & additional whitespace
-* Pad function invocations in parameters with a space 
+* Pad function invocations in parameters with a space
 * Otherwise no padding in parameters
 ```javascript
-//Good  
+//Good
 function( bar, foo() );
 function(foo, bar);
 
@@ -344,7 +344,7 @@ function(bar){
 function(bar){
  if(!bar) {
   bar = 0
-  } 
+  }
 }
 ```
 
@@ -360,7 +360,7 @@ var foo = function (bar) {...};
 *Avoid the use of anonymous functions
 
 ```javascript
-//good 
+//good
 var doWork = function(a, b){
   return a + b;
 }

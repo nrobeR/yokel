@@ -2,7 +2,7 @@
 
 angular.module('yokelApp')
 
-  .controller('HomeController', function($scope, $http, loadSearch, localStorageService){  
+  .controller('HomeController', function($scope, $http, loadSearch, localStorageService){
     $scope.data = {};
     $scope.markers = [];
     $scope.searchNearby = loadSearch.searchNearby;

@@ -43,7 +43,7 @@ angular.module('yokelApp')
     };
     return {
       submitReview: submitReview
-    };   
+    };
   })
 
   //Sends off businessId to server to return specific business
@@ -59,4 +59,4 @@ angular.module('yokelApp')
     return {
       getBusinessPage: getBusinessPage
     };
-  });  
+  });
