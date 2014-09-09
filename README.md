@@ -39,7 +39,7 @@ Change this line:
 to this: 
 * **org.neo4j.server.web server.address=0.0.0.0**
 and close the editor
-	Hot tip: you can save and exit nano with ctrl+x then hit y and enter
+  Hot tip: you can save and exit nano with ctrl+x then hit y and enter
 2. Check to see if the service is running with: 
 sudo service neo4j-service status 
 If the service is not running start it with: 
