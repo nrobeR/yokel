@@ -4,7 +4,7 @@ var Promise = require('bluebird');
 
 var neo4j= require('neo4j');
 /*remember to switch to production once we are sure everything works!*/
-var neo4jUrl = 'http://neo4yokel.cloudapp.net';
+var neo4jUrl = 'http://common-badger.cloudapp.net';
 /********************************************************************/
 var db = new neo4j.GraphDatabase(neo4jUrl);
 var _ = require('lodash');
