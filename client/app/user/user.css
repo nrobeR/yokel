@@ -9,27 +9,27 @@
 .user-followers{
     color: yellow;
 }
-   
+
 .user-following{
     color: green;
 }
-    
+
 .user-reviews{
     color: cyan;
 }
-    
+
 .user-info{
     color: magenta;
 }
-      
+
 .user-vanity{
     color: orange;
 }
-      
+
 .user-clout-score{
     color: black;
 }
-    
+
 .user-activity{
     color: pink;
 }

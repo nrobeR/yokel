@@ -44,7 +44,6 @@ When writing any block of code that is logically subordinate to the line immedia
 
     * use sublime's arrow collapsing as a guide. do the collapsing lines seem like they should be 'contained' by the line with an arrow on it?
 
-
 ### Variable names
 
 * A single descriptive word is best.
@@ -79,7 +78,6 @@ When writing any block of code that is logically subordinate to the line immedia
     // bad:
     var array = ['cat', 'dog', 'fish'];
     ```
-
 
 ### Language constructs
 
@@ -139,7 +137,6 @@ When writing any block of code that is logically subordinate to the line immedia
     function stop(){...};
     ```
 
-
 ### Semicolons
 
 * Don't forget semicolons at the end of lines
@@ -153,7 +150,6 @@ When writing any block of code that is logically subordinate to the line immedia
   ```
 
 * Semicolons are not required at the end of statements that include a block--i.e. `if`, `for`, `while`, etc.
-
 
   ```javascript
   // good:
@@ -188,7 +184,6 @@ When writing any block of code that is logically subordinate to the line immedia
 * Provide comments when a new function is declared, explaining the use of the function .
 * Comment on what code is attempting to do, not how it will achieve it.
 
-
 ### Padding & additional whitespace
 * Pad function invocations in parameters with a space 
 * Otherwise no padding in parameters
@@ -220,8 +215,6 @@ function( foo, bar );
     }
     ```
 
-
-
 ### Working with files
 
 * Do not end a file with any character other than a newline.
@@ -243,7 +236,6 @@ function( foo, bar );
       }
     });
     ```
-
 
 ### Variable declaration
 
@@ -314,7 +306,6 @@ function( foo, bar );
     var dog = "dog";
     ```
 
-
 ### HTML
 
 * Do not use ids for html elements. Use a class instead.
@@ -365,7 +356,7 @@ var foo = function(bar){...};
 //bad:
 var foo = function (bar) {...};
 ```
- 
+
 *Avoid the use of anonymous functions
 
 ```javascript

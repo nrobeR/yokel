@@ -55,7 +55,6 @@ module.exports = function(app, passport){
       res.redirect('/');
     });
 
-
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
    .get(errors[404]);
@@ -64,8 +63,8 @@ module.exports = function(app, passport){
   app.route('/*')
     .get(function(req, res) {
       res.sendfile(app.get('appPath') + '/index.html');
-  });
-  
+    });
+
   };
   // route middleware to make sure a user is logged in
   function isLoggedIn(req, res, next) {

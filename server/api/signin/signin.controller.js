@@ -14,7 +14,7 @@ var User = require('../users/userModel');
 
 // Get list of things
 exports.index = function(req, res){
-  
+
   res.json([
     {
       token: 'i76q2tgkrbd6i7wugyajdf'

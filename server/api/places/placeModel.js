@@ -14,11 +14,9 @@ var Place = function(node){
   this.node = node;
 };
 
-
-
 //Functions to add/find/remove Places
-//Primary function to instantiate new Places based on place id: 
-//requires an object parameter that includes {place_id: value} 
+//Primary function to instantiate new Places based on place id:
+//requires an object parameter that includes {place_id: value}
 //returns a promise with a newly created Place object
 Place.createUniquePlace = function(data){
   return new Promise(function(resolve, reject){
@@ -35,8 +33,8 @@ Place.createUniquePlace = function(data){
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
-        reject(err); 
+      if(err){
+        reject(err);
       } else {
         resolve(new Place(results[0].place));
       }
@@ -56,7 +54,7 @@ Place.find = function(data){
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
+      if(err){
         reject(err);
       } else {
         if(results && results[0] && results[0].place){
@@ -65,7 +63,7 @@ Place.find = function(data){
           reject(new Error('Place does not exist'));
         }
       }
-    });  
+    });
   });
 };
 
@@ -96,8 +94,8 @@ Place.deletePlace = function(data){
     var params = data;
 
     db.query(query, params, function (err, results) {
-      if(err){ 
-        reject(err); 
+      if(err){
+        reject(err);
       } else {
         resolve("Place deleted!");
       }
@@ -106,7 +104,6 @@ Place.deletePlace = function(data){
 };
 
 //functions to add/find/delete relationships
-
 
 //add relationship: requires a Place, and a review,
 Place.addRelationship = function(place, review){
@@ -126,7 +123,7 @@ Place.addRelationship = function(place, review){
     var params = {place:place,  review:review};
 
     db.query(query, params, function(err, results){
-      if(err){ 
+      if(err){
         reject(err);
       } else {
         if(results && results[0] && results[0].place){
@@ -138,8 +135,6 @@ Place.addRelationship = function(place, review){
     });
   });
 };
-
-
 
 //delete relationship:  requires a Place, and a review
 Place.removeRelationship = function(place, review){
@@ -161,7 +156,7 @@ Place.removeRelationship = function(place, review){
     var params = {place:place,  review:review};
 
     db.query(query, params, function(err, results){
-      if(err){ 
+      if(err){
         reject(err);
       } else {
         if(results && results[0] && results[0].place){
@@ -185,10 +180,10 @@ Place.findRelated = function(place_id){
     var params = {
       'place_id': place_id
     };
-    
+
     db.query(query, params, function(err, results){
       if(err){
-       reject(err); 
+       reject(err);
       } else {
         var parsedResults = _.map(results, function(item){
           return item;
@@ -198,6 +193,5 @@ Place.findRelated = function(place_id){
     });
   });
 };
-
 
 module.exports = Place;

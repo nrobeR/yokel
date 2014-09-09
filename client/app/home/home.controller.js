@@ -45,12 +45,3 @@ angular.module('yokelApp')
       businessObj: businessObj
     };
   });
-
-  
-
-
-
-
-
-
-

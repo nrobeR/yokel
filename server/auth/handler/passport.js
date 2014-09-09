@@ -25,11 +25,11 @@ module.exports = function(passport) {
         done(err)
       });
   });
-    
+
   // code for login (use('local-login', new LocalStategy))
   // code for signup (use('local-signup', new LocalStategy))
 
-  // =========================================================================
+    // =========================================================================
     // FACEBOOK ================================================================
     // =========================================================================
     passport.use(new FacebookStrategy({
@@ -46,10 +46,10 @@ module.exports = function(passport) {
 
         // asynchronous
         process.nextTick(function() {
-    
+
                 profile = profile._json;
-              User.createUniqueUser({facebookID:profile.id, 
-                           facebookToken:token, 
+              User.createUniqueUser({facebookID:profile.id,
+                           facebookToken:token,
                            name: profile.name,
                            email:profile.email})
               .then(function(data){

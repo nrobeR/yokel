@@ -19,7 +19,7 @@ var User = function(node){
 //   facebookID: 123939402020201
 //   name: "Marcus Phillips"
 //   email: "marcus@hackreactor.com"
-//   facebookToken: 1344312123adeaf9677898898ccddedd9f898eaa98d98ff 
+//   facebookToken: 1344312123adeaf9677898898ccddedd9f898eaa98d98ff
 // }
 
 //Functions to add/find/remove users
@@ -40,8 +40,8 @@ User.createUniqueUser = function(data){
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
-        reject(err); 
+      if(err){
+        reject(err);
       } else {
         resolve(new User(results[0].user));
       }
@@ -61,7 +61,7 @@ User.find = function(data){
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
+      if(err){
         reject(err);
       } else {
         if(results && results[0] && results[0].user){
@@ -70,7 +70,7 @@ User.find = function(data){
           reject(new Error('user does not exist'));
         }
       }
-    });  
+    });
   });
 };
 
@@ -89,8 +89,8 @@ User.deleteUser = function(data){
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
-        reject(err); 
+      if(err){
+        reject(err);
       } else {
         resolve("User deleted!");
       }
@@ -139,7 +139,7 @@ User.addRelationship = function(user, thing, relationshipType){
     var params = {user:user,  thing:thing};
 
     db.query(query, params, function(err, results){
-      if(err){ 
+      if(err){
         reject(err);
       } else {
         if(results && results[0] && results[0].user){
@@ -151,8 +151,6 @@ User.addRelationship = function(user, thing, relationshipType){
     });
   });
 };
-
-
 
 //delete relationship:  requires a user, and a thing that user related to, and a relationship type
 User.removeRelationship = function(user, thing, relationshipType){
@@ -177,7 +175,7 @@ User.removeRelationship = function(user, thing, relationshipType){
     var params = {user:user,  thing:thing, thingType:thingType};
 
     db.query(query, params, function (err, results){
-      if(err){ 
+      if(err){
         reject(err);
       } else {
         if(results && results[0] && results[0].user){
@@ -202,10 +200,10 @@ User.findRelated = function(facebookID, relationshipType){
       'facebookID': facebookID,
       'relationshipType': relationshipType
     };
-    
+
     db.query(query, params, function(err, results){
       if(err){
-       reject(err); 
+       reject(err);
       } else {
         var parsedResults = _.map(results, function(item){
           return item;
@@ -230,10 +228,10 @@ User.isLocal = function(facebookID, place_id){
       'facebookID': facebookID,
       'place_id': place_id
     };
-    
+
     db.query(query, params, function(err, results){
       if(err){
-       reject(err); 
+       reject(err);
       } else {
         var parsedResults = _.map(results, function(item){
           return item;

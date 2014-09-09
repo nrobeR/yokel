@@ -95,8 +95,6 @@ You can do this with:
 
 ## Requirements
 
-
-
 - Node 0.10.x
 - Angular
 - Express
@@ -118,10 +116,6 @@ bower install
 
 View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
 
-
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
-
-
-

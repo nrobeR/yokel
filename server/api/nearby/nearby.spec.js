@@ -100,7 +100,7 @@ describe('GET /api/nearby', function() {
         done();
       });
   });
-  
+
   it('should respond with JSON array of objects with a score field', function(done) {
     request(app)
       .get('/api/nearby')

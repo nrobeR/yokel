@@ -85,7 +85,7 @@ describe('GET /api/followers', function() {
         done();
       });
   });
-  
+
   it('should respond with JSON array of objects with a lastSeen field', function(done) {
     request(app)
       .get('/api/followers')

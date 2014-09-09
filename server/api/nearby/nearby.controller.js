@@ -19,8 +19,8 @@ var Place = require('../place/placeModel.js');
 var Promise = require('bluebird');
 
 // Get list of locations that are top ranked in the radius
-//there will be a google api call here to get all of the restraunts in the 
-//given area. 
+//there will be a google api call here to get all of the restraunts in the
+//given area.
 
 //api call gets a list of places : currently faked
 //these will come in without scores

@@ -6,17 +6,13 @@ var Review = ('/reviewModel.js');
 
 var Promise = require('bluebird');
 
-
-
-
-
 //adds a review to a business
 //needs a userID, business ID and review object
 /*
 * Example review object
 * {
 *   score: 4 //out of 5
-*   text: "This place was great!  We had fish which was fresh.  Service was slow though." 
+*   text: "This place was great!  We had fish which was fresh.  Service was slow though."
 * }
 
 */
@@ -25,16 +21,14 @@ var userIsLocal = function(userID, place_id){
   User.isLocal(userID, place_id)
 };
 
-    //look up user
-    //check if there is a 'local' relationship with the business
-
+//look up user
+//check if there is a 'local' relationship with the business
 
 exports.create = function(req, res){
   var userID = req.body.userID;
   var place_id = req.body.place_id;
 
   var review = req.body.review;
-
 
   //check if user is local to place_id
   // userIsLocal(userID, place_id)
@@ -66,7 +60,6 @@ exports.create = function(req, res){
   //   res.json('User is not local to business');
   //   res.status(403)
   //   }
-    
+
   // })
 };
-

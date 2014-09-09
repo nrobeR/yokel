@@ -22,8 +22,8 @@ var Review = function(node){
 // }
 
 //Functions to add/find/remove reviews
-//Primary function to instantiate new reviews based on review id: 
-//requires an object parameter that includes {reviewID: value, text: "This is the review text", score: 27} 
+//Primary function to instantiate new reviews based on review id:
+//requires an object parameter that includes {reviewID: value, text: "This is the review text", score: 27}
 //returns a promise with a newly created review object
 Review.createUniqueReview = function(data) {
   return new Promise(function(resolve, reject){
@@ -40,8 +40,8 @@ Review.createUniqueReview = function(data) {
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
-        reject(err); 
+      if(err){
+        reject(err);
       } else {
         resolve(new Review(results[0].review));
       }
@@ -61,7 +61,7 @@ Review.find = function(data){
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
+      if(err){
         reject(err);
       } else {
         if(results && results[0] && results[0].review){
@@ -70,7 +70,7 @@ Review.find = function(data){
           reject(new Error('review does not exist'));
         }
       }
-    });  
+    });
   });
 };
 
@@ -89,8 +89,8 @@ Review.deletereview = function(data){
     var params = data;
 
     db.query(query, params, function(err, results){
-      if(err){ 
-        reject(err); 
+      if(err){
+        reject(err);
       } else {
         resolve("review deleted!");
       }
@@ -100,6 +100,5 @@ Review.deletereview = function(data){
 
 //functions to add/find/delete relationships
 //reviews don't have any outbound relationships.
-
 
 module.exports = Review;

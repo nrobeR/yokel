@@ -5,7 +5,7 @@ var config = require('../../config/environment/production');
 var Promise = require('bluebird');
 var request = require('request');
 
-//fetch business data 
+//fetch business data
 
 //fetch detailed place info from google
 

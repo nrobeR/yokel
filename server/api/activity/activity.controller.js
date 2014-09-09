@@ -11,7 +11,7 @@
 
 var _ = require('lodash');
 
-// Get list of activities 
+// Get list of activities
 exports.index = function(req, res) {
   res.json([
     {
