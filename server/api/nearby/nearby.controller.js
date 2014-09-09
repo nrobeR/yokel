@@ -55,7 +55,7 @@ var findBest = function(placesWithScores){
 }
 var apiRequest = function(req, res){
   request('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+ req.param("lat") + ',' + req.param("lon") +'&radius=3200&types=food&key=' + config.googleAPIKey , function (error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       var places = JSON.parse(body).results
       addScores(places)
        .then(function(data){
