@@ -2,27 +2,32 @@
 
 angular.module('yokelApp')
 
-  .controller('BusinessController', function($scope, $http, $stateParams, BusinessPages, ReviewResults){
-    //BusinessId sent to server is being pulled from the URL paramaters ($stateParams.place_id)
-    var businessId = $stateParams.place_id;
+  .controller('BusinessController', [
+    'resolveData', '$scope', '$http', '$stateParams', 'BusinessPages', 'ReviewResults',
+    function(resolveData, $scope, $http, $stateParams, BusinessPages, ReviewResults){
+      //BusinessId sent to server is being pulled from the URL paramaters ($stateParams.place_id)
+      var businessId = $stateParams.place_id;
+      $scope.business = resolveData.data[0];
+      console.log('Resolved: ', $scope.business);
+      // $scope.business = {};
+      // $scope.getBusinessPage = BusinessPages.getBusinessPage;
+      // $scope.getBusinessPage(businessId)
+      //   .then(function(business){
+      //     console.log(business.data[0])
+      //     $scope.business = business.data[0];
+      //   });
+      $scope.reviewObj = {};
+      $scope.reviewObj.place_id = businessId;
+      $scope.submitReview = ReviewResults.submitReview;
 
-    $scope.business = {};
-    $scope.getBusinessPage = BusinessPages.getBusinessPage;
-    $scope.getBusinessPage(businessId)
-      .then(function(business){
-        console.log(business.data[0])
-        $scope.business = business.data[0];
-      });
-    $scope.reviewObj = {};
-    $scope.reviewObj.place_id = businessId;
-    $scope.submitReview = ReviewResults.submitReview;
-
-    $scope.data = {};
-    $scope.markers = [];
-    navigator.geolocation.getCurrentPosition(function(position){
-      $scope.map = new google.maps.Map(document.getElementById('map'), {center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), zoom: 14 });
-    })
-  })
+      $scope.data = {};
+      $scope.markers = [];
+      navigator.geolocation.getCurrentPosition(function(position){
+        // FIXME: Uncaught TypeError: Cannot read property 'offsetWidth' of null
+        // offsetWidth of null means it cannot find the map
+        $scope.map = new google.maps.Map(document.getElementById('business-map'), {center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude), zoom: 14 });
+      })
+  }])
 
   .factory('ReviewResults', function($http){
     //submits a review to the database - review object has both input fields as well as the businessId
@@ -49,7 +54,7 @@ angular.module('yokelApp')
         url: 'api/businesses/'+businessId,
       }).success(function(business){
         return business;
-      })
+      });
     };
     return {
       getBusinessPage: getBusinessPage
