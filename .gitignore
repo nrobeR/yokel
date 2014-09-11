@@ -24,8 +24,6 @@ dist
 # public modules
 node_modules
 client/bower_components
-www/lib
-platforms/
 
 # Logs
 logs
