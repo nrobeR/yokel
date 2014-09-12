@@ -2,11 +2,36 @@
 <ion-view title="Business">
   <ion-content ng-controller="BusinessController">
     <!-- The content of the page -->
-    <div class="card">
-      <div class="item item-text-wrap">
-        Hello, this is a {{state}} contoller
+    <div class="list card">
+
+      <div class="item item-avatar">
+        <img src="assets/City Pub.jpg">
+        <h2>
+          City Pub
+          <div style="float: right">
+            <i class="icon ion-ios7-star-half"></i>
+            <i class="icon ion-ios7-star-outline"></i>
+            <i class="icon ion-ios7-star-outline"></i>
+            <i class="icon ion-ios7-star-outline"></i>
+            <i class="icon ion-ios7-star-outline"></i>
+          </div>
+        </h2>
+        <p>Sad Bar</p>
+      </div>
+
+      <div class="item item-body">
+        <img class="item-image" src="assets/City Pub.jpg">
+        <p style="postion: 'inline'">
+          Locals think this place is garbage.
+        </p>
+
+        <a href="/#/review" class="button button-calm button-right">
+          Write a review
+        </a>
       </div>
     </div>
+
+
   </ion-content>
 </ion-view>
 
