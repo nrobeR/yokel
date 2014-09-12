@@ -8,11 +8,14 @@ angular.module('yokelApp')
         templateUrl: './app/review/review.html',
       });
   })
-  .factory('GestureFunc',function(){
+  .factory('GestureFunc',function($state){
   	var funcs = {};
   	funcs.onSwipeRight = function(){
-  	  // $state.go('business');
-  	  console.log('hello');
+  	  $state.go('business');
   	};
+    funcs.onSwipeDown = function(){
+      console.log($scope.comments);
+      // $state.go('business',$scope.)
+    }
   	return funcs;
   });

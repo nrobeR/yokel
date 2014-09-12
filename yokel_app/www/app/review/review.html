@@ -1,20 +1,21 @@
 <!-- The title of the ion-view will be shown on the navbar -->
 <ion-view title="Write review">
-  <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()">
+
+  <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()" on-swipe-down="onSwipeDown()">
     <!-- The content of the page -->
-    <div class="card">
-      <div class="item item-text-wrap">
-        Hello, this is a {{state}} contoller
-      </div>
-    </div>
-    <div class="review">
+<!-- 	<a class="button icon-left ion-chevron-left button-calm" href="/#/business">Back</a><br> -->
+    <rating class="rating" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+
+    <div class="review card">
       <label class="item item-input">
-        <textarea rows=10 cols=10 placeholder="tell us about your opinion"></textarea>	
+        <textarea rows=10 cols=10 placeholder="tell us about your opinion" ng-model="comments"></textarea>	
       </label>
     </div>
+    <div class="submit">
+	    <button class="button button-calm button-block">
+	      Submit
+	    </button>
+    </div>
   </ion-content>
-  <div>
-    <button on-swipe-right="onSwipeRight()" class="button">Test</button>
-    <button on-swipe-down="onSwipeDown()" class="button">Test2</button>
-  </div>
+
 </ion-view>
