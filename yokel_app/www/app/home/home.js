@@ -4,7 +4,7 @@ angular.module('yokelApp')
   .config(function($stateProvider){
     $stateProvider
       .state('home', {
-        url: '/',
+        url: '/home',
         templateUrl: './app/home/home.html',
       });
   })

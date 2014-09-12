@@ -21,14 +21,13 @@ angular.module('yokelApp', ['ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    $location.path('/splash');
   });
 })
 
 .controller('HomeRouter', function($scope, $location){
   
   $scope.tapToSplash = function(){
-      $location.path('/splash');
+      $location.path('/');
   };
 
   $scope.tapToHome = function(){
