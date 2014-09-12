@@ -1,11 +1,20 @@
 <!-- The title of the ion-view will be shown on the navbar -->
-<ion-view title="Review">
-  <ion-content ng-controller="ReviewController">
+<ion-view title="Write review">
+  <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()">
     <!-- The content of the page -->
     <div class="card">
       <div class="item item-text-wrap">
         Hello, this is a {{state}} contoller
       </div>
     </div>
+    <div class="review">
+      <label class="item item-input">
+        <textarea rows=10 cols=10 placeholder="tell us about your opinion"></textarea>	
+      </label>
+    </div>
   </ion-content>
+  <div>
+    <button on-swipe-right="onSwipeRight()" class="button">Test</button>
+    <button on-swipe-down="onSwipeDown()" class="button">Test2</button>
+  </div>
 </ion-view>
