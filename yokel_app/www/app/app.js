@@ -8,7 +8,7 @@ angular.module('yokelApp', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
   $urlRouterProvider
     .otherwise('/');
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 })
 
 .run(function($ionicPlatform) {
@@ -22,4 +22,16 @@ angular.module('yokelApp', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+})
+
+.controller('HomeRouter', function($scope, $location){
+  
+  $scope.tapToSplash = function(){
+      $location.path('/splash');
+  };
+
+  $scope.tapToHome = function(){
+      $location.path('/home');
+  };
+
 });
