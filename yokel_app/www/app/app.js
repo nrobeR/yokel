@@ -35,4 +35,9 @@ angular.module('yokelApp', ['ionic'])
       $location.path('/home');
   };
 
+
+  $scope.tapToSadBar = function(){
+      window.open('http://www.cablecarpub.com/index.html');
+  };
+
 });
