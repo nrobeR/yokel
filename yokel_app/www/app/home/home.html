@@ -1,13 +1,38 @@
 <!-- The title of the ion-view will be shown on the navbar -->
-<ion-view title="Home">
+<ion-view class="bar-positive" title="Yokel">
   <ion-content ng-controller="HomeController">
     <!-- The content of the page -->
-    <div class="card">
-      <div class="item item-text-wrap">
-        Hello, this is a {{state}} contoller
+
+    <!-- search bar -->
+    <form ng-controller="SearchController" ng-submit="submit(value)">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input ng-model="value" type="text" placeholder="Search">
+        </label>
+      </div>
+    </form>
+
+    <!-- card view -->
+    <div class="list card" ng-controller="PopupCtrl">
+
+      <div ng-repeat="place in tempData" ng-click="showConfirm(place['name'])">
+        <div class="item">
+          <h2>{{place.name}}</h2>
+          <p>{{place.description}}</p>
+          <p>{{place.distance}}</p>
+        </div>
+        <!-- place.image -->
+        <div class="item item-image">
+          <img src="assets/{{place.name}}.jpg">
+        </div>
       </div>
     </div>
+
+    <!-- popup button -->
+    <button class="button button-positive" ng-controller="PopupCtrl" ng-click="showConfirm()">
+      Go Here!
+    </button>
+
   </ion-content>
 </ion-view>
-
-
