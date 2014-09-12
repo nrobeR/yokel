@@ -15,9 +15,22 @@ $royal:                           #8a6de9 !default;
 $dark:                            #444 !default;
 */
 
+$calm:                            #096666 !default;
+$positive:                        #008080 !default;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+h1.title {
+  font-weight: bold;
+}
+
+.splash-pane {
+  background: url("../assets/sf_transit_map.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
