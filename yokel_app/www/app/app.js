@@ -21,7 +21,6 @@ angular.module('yokelApp', ['ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    $location.path('/splash');
   });
 })
 
