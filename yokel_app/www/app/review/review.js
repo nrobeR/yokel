@@ -13,9 +13,5 @@ angular.module('yokelApp')
   	funcs.onSwipeRight = function(){
   	  $state.go('business');
   	};
-    funcs.onSwipeDown = function(){
-      console.log($scope.comments);
-      // $state.go('business',$scope.)
-    }
   	return funcs;
   });

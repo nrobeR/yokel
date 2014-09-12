@@ -1,9 +1,7 @@
 <!-- The title of the ion-view will be shown on the navbar -->
 <ion-view title="Write review">
 
-  <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()" on-swipe-down="onSwipeDown()">
-    <!-- The content of the page -->
-<!-- 	<a class="button icon-left ion-chevron-left button-calm" href="/#/business">Back</a><br> -->
+  <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()" on-swipe-down="submitComments()">
     <rating class="rating" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
 
     <div class="review card">
@@ -12,7 +10,7 @@
       </label>
     </div>
     <div class="submit">
-	    <button class="button button-calm button-block">
+	    <button class="button button-calm button-block" ng-click="submitComments()">
 	      Submit
 	    </button>
     </div>

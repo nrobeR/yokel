@@ -2,13 +2,19 @@
 
 angular.module('yokelApp')
 
-.controller('ReviewController', function($scope,$state,GestureFunc){
+.controller('ReviewController', function($scope,$state,$ionicPopup,GestureFunc){
   $scope.state = "review";
   $scope.onSwipeRight = GestureFunc.onSwipeRight;
   $scope.comments = '';
-  $scope.onSwipeDown = function(){
-    $state.go
-  }
+  $scope.submitComments = function(){
+    $ionicPopup.alert({
+      title: 'Submitted',
+      template: 'Thanks for you reviews!',
+      buttons:[{text:'Okay',type: 'button button-calm'}]
+    }).then(function(res) {
+      $state.go('business',$scope.comments);
+    });
+  };
 
   $scope.rate = 3;
   $scope.max = 5;
