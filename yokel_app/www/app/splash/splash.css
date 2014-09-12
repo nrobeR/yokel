@@ -13,3 +13,11 @@ h1.title {
 .calm:                            #096666 !default;
 .positive:                        #008080 !default;
 */
+
+h2, h3, h4, h5, h6 {
+  top:0;
+  color: #fff;
+  background-color: #43cee6;
+  text-align: center;
+  font-weight: 300;
+}

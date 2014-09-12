@@ -8,13 +8,16 @@
       <!-- <div class="bar bar-positive">
         <h2 class="title">local reviews by local people</h2>
       </div> -->
+        <h4>
+          Local reviews by local people
+        </h4>
         <div class="col col-50 col-offset-50">
-          <button class="button button-block button-calm icon-right ion-person-add">Sign up</button>
-          <button class="button button-block button-calm icon-right ion-unlocked">Login</button>
+          <button class="button button-block button-calm icon-right ion-person-add" ng-click="tapToHome()">Sign up</button>
+          <button class="button button-block button-calm icon-right ion-unlocked" ng-click="tapToHome()">Login</button>
         </div>
-        <div class="bar bar-calm bottomized">
+        <div class="bar bar-calm bottomized" ng-click="tapToHome()">
           <div class="title">Welcome, guest</div>
-          <button class="button button-outline button-light icon-right ion-chevron-right">browse</button>
+          <button class="button button-outline button-light icon-right ion-chevron-right" href="/">browse</button>
         </div>
       </div>
     </ion-content>
