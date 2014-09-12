@@ -2,7 +2,9 @@
 <ion-view title="Write review">
 
   <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()" on-swipe-down="submitComments()" class="slide-left-right">
-    <rating class="rating" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+<!--     <rating class="rating" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating> -->
+
+    <rating ng-model="rate" max="max"></rating>
 
     <div class="review card">
       <label class="item item-input">

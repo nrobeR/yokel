@@ -12,4 +12,9 @@ textarea{
 .rating{
   font-size: 26px;
   color:#F0563D;
+  
+}
+
+.button-calm{
+  text-align: center;
 }
