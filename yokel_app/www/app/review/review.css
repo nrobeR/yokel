@@ -1,0 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+textarea{
+  font-size: 25px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.review{
+  font-family: 'Indie Flower', cursive;
+}
+
+.rating{
+  font-size: 26px;
+  color:#F0563D;
+}
