@@ -2,38 +2,6 @@
 
 angular.module('yokelApp')
 
-.factory('PopupButton', function($ionicPopup){
-  return {
-    showConfirm: function(name){
-      console.log(name);
-      if(name === 'City Pub'){
-        console.log(name);
-
-        //custom text for City Pub
-        var confirmPopup = $ionicPopup.confirm({
-          title: 'Sad Bar',
-          template: 'Are you sure you want to drown your sorrows at Sad Bar?'
-        });
-      } else {
-        
-        //default text for places
-        var confirmPopup = $ionicPopup.confirm({
-          title: name,
-          template: 'Go to ' + name + '?'
-        });
-      }
-
-      confirmPopup.then(function(res) {
-        if(res) {
-          console.log('You are sure');
-        } else {
-          console.log('You are not sure');
-        }
-      });
-    }
-  }
-})
-
 .controller('HomeController', function($scope){
   $scope.state = "home";
 })
@@ -45,7 +13,7 @@ angular.module('yokelApp')
 })
 
 .controller('PopupCtrl', function($scope, PopupButton, $timeout){
-  $scope.showConfirm = PopupButton.showConfirm
+  $scope.showConfirm = PopupButton.showConfirm;
 
   $scope.tempData = {
     1: {
@@ -66,6 +34,5 @@ angular.module('yokelApp')
       distance: '0.3 miles'
     }
   };
-
 
 });
