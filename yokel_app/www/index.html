@@ -18,7 +18,7 @@
   </head>
   <body ng-app="yokelApp">
     <!-- Top Nav bar -->
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+    <ion-nav-bar class="bar bar-header bar-dark">
     </ion-nav-bar>
 
     <!-- Template content -->
@@ -26,6 +26,19 @@
       <!-- Center content -->
     </ion-nav-view>
 
+    <ion-footer-bar ng-controller="HomeRouter">
+      <div class="tabs tabs-icon-only">
+        <a class="tab-item" ng-click="tapToSplash()">
+          <i class="icon ion-home"></i>
+        </a>
+        <a class="tab-item" ng-click="tapToHome()">
+          <i class="icon ion-star"></i>
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-gear-a"></i>
+        </a>
+      </div>
+    </ion-footer-bar>
 
     <!-- Bower components -->
       <!-- NOTE: ionic.bundle.js is a concatenation of: ionic.js, angular.js, angular-animate.js, angular-sanitize.js, angular-ui-router.js, and ionic-angular.js. -->
