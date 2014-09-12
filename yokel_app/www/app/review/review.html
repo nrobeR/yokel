@@ -1,7 +1,7 @@
 <!-- The title of the ion-view will be shown on the navbar -->
 <ion-view title="Write review">
 
-  <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()" on-swipe-down="submitComments()">
+  <ion-content ng-controller="ReviewController" on-swipe-right="onSwipeRight()" on-swipe-down="submitComments()" class="slide-left-right">
     <rating class="rating" ng-model="rate" max="max" readonly="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
 
     <div class="review card">

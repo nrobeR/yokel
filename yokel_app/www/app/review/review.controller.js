@@ -10,7 +10,7 @@ angular.module('yokelApp')
     $ionicPopup.alert({
       title: 'Submitted',
       template: 'Thanks for you reviews!',
-      buttons:[{text:'Okay',type: 'button button-calm'}]
+      buttons:[{text:'<b>Okay</b>',type: 'button button-calm'}]
     }).then(function(res) {
       $state.go('business',$scope.comments);
     });
