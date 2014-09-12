@@ -9,7 +9,7 @@ angular.module('yokelApp')
       });
   })
 
-  .factory('PopupButton', function($ionicPopup){
+  .factory('PopupButton', function($ionicPopup, $location){
     return {
       showConfirm: function(name){
         console.log(name);
@@ -33,6 +33,7 @@ angular.module('yokelApp')
         confirmPopup.then(function(res) {
           if(res) {
             console.log('You are sure');
+            $location.path('/business');
           } else {
             console.log('You are not sure');
           }
