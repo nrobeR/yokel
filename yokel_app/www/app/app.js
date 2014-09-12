@@ -27,7 +27,7 @@ angular.module('yokelApp', ['ionic'])
 .controller('HomeRouter', function($scope, $location){
   
   $scope.tapToSplash = function(){
-      $location.path('/splash');
+      $location.path('/');
   };
 
   $scope.tapToHome = function(){
