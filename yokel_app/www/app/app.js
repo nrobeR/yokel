@@ -7,7 +7,7 @@ angular.module('yokelApp', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
   $urlRouterProvider
-    .otherwise('/');
+    .otherwise('/splash');
   // $locationProvider.html5Mode(true);
 })
 
