@@ -7,11 +7,11 @@ angular.module('yokelApp', ['ionic'])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
   $urlRouterProvider
-    .otherwise('/splash');
+    .otherwise('/');
   // $locationProvider.html5Mode(true);
 })
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $location) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,6 +21,7 @@ angular.module('yokelApp', ['ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    $location.path('/splash');
   });
 })
 
